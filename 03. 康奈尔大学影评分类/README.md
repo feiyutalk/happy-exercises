@@ -6,6 +6,7 @@
 
 - [Naive Bayes Classifier](http://neuclil.com/2017/10/06/Naive-Bayes-Classifier/)
 - [Naive Bayes Classifier II](http://neuclil.com/2017/10/07/Naive-Bayes-Classifier-II/)
+- [Naive Bayes Classifier III](http://neuclil.com/2017/10/07/Naive-Bayes-Classifier-III/)
 
 然后结合这篇小项目，让你能更加深刻的理解朴素贝叶斯算法。
 
@@ -231,3 +232,41 @@ def train_and_test_data(data_):
 ```
 
 写到这里，我们自己手写的贝叶斯分类器就算完成了，大家可以自己训练并预测以下，大概的预测准确率在68%左右，我们使用简单的、完全手写的贝叶斯分类器能够达到这样的效果，还是很不错的。
+
+## 2.3 使用sklearn自带的贝叶斯分类器
+
+如果对sklearn中贝叶斯分类器不熟悉的话，建议先去查看一下相关的资料，sklearn中封装了三种贝叶斯分类器，分别是多项式朴素贝叶斯分类器，伯努利朴素贝叶斯分类器，高斯朴素贝叶斯分类器，在这三种分类器中，前两种经常在文本分类中使用，我们通过如下的代码来训练模型，并预测结果
+
+```python
+data = get_dataset()
+train_data, train_target, test_data, test_target = train_and_test_data(data)
+
+nbc_mul = Pipeline([('vect', TfidfVectorizer()), ('clf', MultinomialNB(alpha=1.0)), ])
+nbc_mul.fit(train_data, train_target)
+predict = nbc_mul.predict(test_data)
+count = 0
+for left, right in zip(predict, test_target):
+    if left == right:
+        count += 1
+
+print('Multinomial '+ str(count/len(test_target)))
+
+nbc_ber = Pipeline([('vect', TfidfVectorizer()), ('clf', BernoulliNB(alpha=1.0)), ])
+nbc_ber.fit(train_data, train_target)
+predict = nbc_ber.predict(test_data)
+count = 0
+for left, right in zip(predict, test_target):
+    if left == right:
+        count += 1
+
+print('BernoulliNB '+ str(count/len(test_target)))
+```
+
+得到的结果如下：
+
+```python
+Multinomial 0.7410926365795725
+BernoulliNB 0.7814726840855107
+```
+
+可以看出，用sklearn自带的分类器效果会比我们自己写的贝叶斯分类器效果要好。
