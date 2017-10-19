@@ -2,7 +2,7 @@
 
 # 前言
 
-在以下的两篇博客中，分别对朴素贝叶斯的原理以及sklearn中的朴素贝叶斯库进行了介绍，在这里则是结合具体了项目，将前面学习的朴素贝叶斯基本原理应用到文本分类中。如果你对朴素贝叶斯不太了解，请先花点时间看下面两篇博客:
+在以下的3篇博客中，分别对朴素贝叶斯的原理以及sklearn中的朴素贝叶斯库进行了介绍，在这里则是结合具体了项目，将前面学习的朴素贝叶斯基本原理应用到文本分类中。如果你对朴素贝叶斯不太了解，请先花点时间看下面3篇博客:
 
 - [Naive Bayes Classifier](http://neuclil.com/2017/10/06/Naive-Bayes-Classifier/)
 - [Naive Bayes Classifier II](http://neuclil.com/2017/10/07/Naive-Bayes-Classifier-II/)
