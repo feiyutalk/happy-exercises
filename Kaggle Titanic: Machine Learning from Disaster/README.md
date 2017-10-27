@@ -6,6 +6,8 @@ Kaggle是一个数据分析建模的应用竞赛平台，有点类似KDD-CUP数�
 
 - [Titanic: Machine Learning from Disaster](https://www.kaggle.com/c/titanic)
 
+如果访问不了Kaggle，可以看如下的描述，此外，数据集已经下载好了，并放在了input文件夹下，具体解题步骤请查看jupyter notebook文件。
+
 # Overview
 
 ## Competition Description
@@ -90,4 +92,6 @@ Some children travelled only with a nanny, therefore parch=0 for them.
 
 # 说明
 
-该项目的代码和实现说明在jupyter notebook中。
+该项目参考自寒小阳的机器学习系列3_逻辑回归应用之Kaggle泰坦尼克之灾，感谢寒小阳老师的分享:
+
+参考自:<http://blog.csdn.net/han_xiaoyang/article/details/49797143> 
