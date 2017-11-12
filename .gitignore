@@ -28,7 +28,10 @@ local.properties
 
 # PDT-specific
 .buildpath
-
+################
+Jupyter
+##############
+.ipynb_*/
 
 #################
 ## Visual Studio
